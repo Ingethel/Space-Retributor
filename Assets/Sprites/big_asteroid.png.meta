@@ -1,0 +1,253 @@
+fileFormatVersion: 2
+guid: b66055c53307032449772c2198f88bc9
+timeCreated: 1451574548
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: big_asteroid_0
+    21300002: big_asteroid_1
+    21300004: big_asteroid_2
+    21300006: big_asteroid_3
+    21300008: big_asteroid_4
+    21300010: big_asteroid_5
+    21300012: big_asteroid_6
+    21300014: big_asteroid_7
+    21300016: big_asteroid_8
+    21300018: big_asteroid_9
+    21300020: big_asteroid_10
+    21300022: big_asteroid_11
+    21300024: big_asteroid_12
+    21300026: big_asteroid_13
+    21300028: big_asteroid_14
+    21300030: big_asteroid_15
+    21300032: big_asteroid_16
+    21300034: big_asteroid_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: big_asteroid_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 3
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_2
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 5
+        width: 51
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 6
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 6
+        width: 55
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 5
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_6
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 6
+        width: 52
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 4
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3
+        width: 47
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_9
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 2
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_10
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 4
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_11
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 6
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_12
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 6
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_13
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 6
+        width: 55
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_14
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 5
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_15
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 5
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_16
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 3
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: big_asteroid_17
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 3
+        width: 48
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
