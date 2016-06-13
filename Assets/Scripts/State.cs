@@ -12,20 +12,22 @@ public class State : IPoolObject {
 	protected bool lives;
 	BoxCollider2D[] colliders;
 	Sprite sprite;
+	SpriteRenderer sRenderer;
 
 	protected override void Awake(){
 		base.Awake ();
-		sprite = GetComponent<SpriteRenderer> ().sprite;
+		sRenderer = GetComponent<SpriteRenderer> ();
+		sprite = sRenderer.sprite;
+		colliders = GetComponents<BoxCollider2D> ();
 	}
 
 	public override void Spawn(Vector3 position, Quaternion rotation, Vector3 scale){
 		if (ready) {
 			ready = false;
-			colliders = GetComponents<BoxCollider2D> ();
 			foreach (BoxCollider2D c in colliders)
 				c.enabled = true;
 			lives = true;
-			GetComponent<SpriteRenderer> ().sprite = sprite;
+			sRenderer.sprite = sprite;
 			base.Spawn (position, rotation, scale);
 		}
 	}
@@ -46,9 +48,11 @@ public class State : IPoolObject {
 	protected IEnumerator Dead(){
 		foreach (BoxCollider2D c in colliders)
 			c.enabled = false;
-
-		GetComponent<Animator>().SetTrigger("isDead");
-		yield return new WaitForSeconds (anim_time);
+		Animator animator = GetComponent<Animator> ();
+		if (animator != null) {
+			GetComponent<Animator>().SetTrigger("isDead");
+			yield return new WaitForSeconds (anim_time);
+		}
 		Destroy ();
 	}
 

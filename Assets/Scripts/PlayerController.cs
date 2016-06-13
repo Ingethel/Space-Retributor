@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
 		health = GameObject.FindGameObjectWithTag ("HealthBar").GetComponent<StateIndicator> ();
 		armor = GameObject.FindGameObjectWithTag ("ArmorBar").GetComponent<StateIndicator> ();
 		currentFrequency = fireFrequency;
-		pool = FindObjectOfType<PoolManager> ();
+		pool = PoolManager.instance;
 		pool.CreatePool (missile, 15);
 	}
 

@@ -52,8 +52,8 @@ public class PoolManager : MonoBehaviour {
 	public void SpawnObject(GameObject prefab, Vector3 position){
 		SpawnObject (prefab, position, Quaternion.identity, Vector3.one);
 	}
-}
 
+}
 
 public class PoolObject {
 	GameObject _object;
@@ -71,7 +71,6 @@ public class PoolObject {
 			poolObjectScript = _object.GetComponent<IPoolObject>();
 		}
 		_object.SetActive (false);
-
 	}
 	
 	public void Spawn(Vector3 position, Quaternion rotation, Vector3 scale){

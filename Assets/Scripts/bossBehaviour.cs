@@ -4,12 +4,12 @@ using System.Collections;
 public class bossBehaviour : MonoBehaviour {
 
 	Vector3 fightLocation = new Vector3(0, 7.5f, 1);
+	public GameObject bossMissile;
 
 	void Start () {
 		StartCoroutine(moveToFight ());
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}
@@ -19,7 +19,6 @@ public class bossBehaviour : MonoBehaviour {
 			transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime, transform.position.z);
 			yield return null;
 		}
-		Debug.Log ("running");
 	}
 
 }

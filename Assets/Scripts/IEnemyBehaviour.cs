@@ -40,7 +40,7 @@ public class IEnemyBehaviour : MonoBehaviour {
 		gravity = GetComponent<GravityPool> ();
 		target = GameObject.FindGameObjectWithTag ("Player");
 		missile = Resources.Load ("EnemyMissile") as GameObject;
-		pool = FindObjectOfType<PoolManager> ();
+		pool = PoolManager.instance;
 		gravity.enabled = true;
 	}
 

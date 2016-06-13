@@ -31,7 +31,7 @@ public class SpawnEnemy : MonoBehaviour {
 		gameState = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameState> ();
 		spawnPoints = GameObject.FindGameObjectsWithTag ("SpawnPoint");
 		lastSpawnTime = Time.time;
-		pool = FindObjectOfType<PoolManager> ();
+		pool = PoolManager.instance;
 		pool.CreatePool (enemy, 15);
 		pool.CreatePool (enemyMissile, 20);
 	}
