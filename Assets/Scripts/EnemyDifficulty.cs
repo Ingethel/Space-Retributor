@@ -8,7 +8,6 @@ using System.Collections;
 public class EnemyDifficulty : MonoBehaviour {
 
 	bool engage = false;
-
 	int behaviourLevel = 1;
 	int maxDifficulty = 3;
 
@@ -73,4 +72,5 @@ public class EnemyDifficulty : MonoBehaviour {
 	public int getMaxDiff(){
 		return maxDifficulty;
 	}
+
 }

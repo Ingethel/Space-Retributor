@@ -14,6 +14,7 @@ public class CannonFire : MonoBehaviour {
 		charge.enableEmission = false;
 		beam.enableEmission = false;
 		StartCoroutine (chargingBoom ());
+		GetComponent<State> ().WakeUp ();
 	}
 
 

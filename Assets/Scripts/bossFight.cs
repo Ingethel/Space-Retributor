@@ -1,22 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bossFight : MonoBehaviour {
+public class BossFight : MonoBehaviour {
 
 	public GameObject boss;
-	GameObject bossInstance;
-	Vector3 spawnLocation = new Vector3(0f,13f,1f);
+	bool bossSpawned;
+	HighScoreManager score;
+	public int scoreTrigger;
 
 	void Start () {
-		spawnBoss ();
+		bossSpawned = false;
+		score = FindObjectOfType<HighScoreManager> ();
 	}
 	
 	void Update () {
-	
+		if (!bossSpawned) {
+			if (score.getHighScore () >= scoreTrigger) {
+				spawnBoss();
+			}
+		}
 	}
 
 	public void spawnBoss(){
-		bossInstance = (GameObject)Instantiate(boss, spawnLocation, Quaternion.identity);
+		bossSpawned = true;
+		Instantiate(boss, Vector3.zero, Quaternion.identity);
 	}
 
 }

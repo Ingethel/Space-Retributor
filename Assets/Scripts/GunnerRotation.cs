@@ -10,16 +10,20 @@ public class GunnerRotation : MonoBehaviour {
 	[HideInInspector]
 	public Vector3 moveDirection;
 
+	State state;
+
 	void Start(){
+		state = GetComponent<State> ();
 		target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
 	}
 
 	void Update () {
-		moveDirection = target.position - transform.position; 
-		if (moveDirection != Vector3.zero) 
-		{
-			float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.AngleAxis(angle+offset, Vector3.forward), step);
+		if (state.isAlive ()) {
+			moveDirection = target.position - transform.position; 
+			if (moveDirection != Vector3.zero) {
+				float angle = Mathf.Atan2 (moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+				transform.rotation = Quaternion.RotateTowards (transform.rotation, Quaternion.AngleAxis (angle + offset, Vector3.forward), step);
+			}
 		}
 	}
 

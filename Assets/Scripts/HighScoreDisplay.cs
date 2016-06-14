@@ -23,7 +23,12 @@ public class HighScoreDisplay : MonoBehaviour{
 	string[] _scoreNames = new string[5]{"Score1", "Score2", "Score3", "Score4", "Score5"};
 	string[] _effortNames = new string[5]{"Effort1", "Effort2", "Effort3", "Effort4", "Effort5"};
 
-	
+	private static int versionID = 2;
+
+	void Start(){
+		checkUpdate ();
+	}
+
 	/**
 	 * Display Scores
 	 * */
@@ -35,6 +40,14 @@ public class HighScoreDisplay : MonoBehaviour{
 		for (int i = 0; i < 5; i++) {
 			Scores[i].text = _scores[i] > 0 ? _scores[i].ToString() : "...";
 			EffortNumber[i].text = _efforts[i] > 0 ? _efforts[i].ToString() : "...";
+		}
+	}
+
+	private void checkUpdate(){
+		if (PlayerPrefs.GetInt ("VersionID") != versionID) {
+			PlayerPrefs.DeleteAll();
+			PlayerPrefs.SetInt("VersionID", versionID);
+
 		}
 	}
 

@@ -7,12 +7,19 @@ public class GunnerState : State {
 	protected override void Awake ()
 	{
 		base.Awake ();
-		lives = true;
-		explosion.enableEmission = false;
+		if(explosion != null)
+			explosion.enableEmission = false;
 	}
 
 	protected override void onDeath ()
 	{
-		explosion.enableEmission = true;
+		FindObjectOfType<HighScoreManager> ().increaseHighScore (500);
+		if(explosion != null)
+			explosion.enableEmission = true;
+	}
+
+	public override void WakeUp(){
+		base.WakeUp();
+		GetComponent<BoxCollider2D> ().enabled = true;
 	}
 }

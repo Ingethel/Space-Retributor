@@ -10,16 +10,32 @@ public class GunnerFire : MonoBehaviour {
 	private int index;
 	GunnerRotation gunnerView;
 
+	float last_fire;
+	public float fireFrequency;
+
+	State state;
+
 	void Start () {
+		state = GetComponent<State> ();
+		last_fire = -1;
 		missileStack = new GameObject[stackSize];
 		for (int i = 0; i < stackSize; i++) {
 			missileStack[i] = (GameObject)Instantiate(bossMissile, Vector3.zero, Quaternion.identity);
+			missileStack[i].transform.parent = gameObject.transform.parent.transform;
 			missileStack[i].GetComponent<Rigidbody2D>().gravityScale = 0;
 			missileStack[i].SetActive(false);
 		}
 		index = 0;
 		gunnerView = GetComponent<GunnerRotation> ();
-		StartCoroutine (fire ());
+	}
+
+	void Update(){
+		if (state.isAlive ()) {
+			if(Time.time - last_fire > fireFrequency){
+				FireMissiles();
+				last_fire = Time.time;
+			}
+		}
 	}
 
 	void FireMissiles(){
@@ -38,13 +54,6 @@ public class GunnerFire : MonoBehaviour {
 		index += 2;
 		if (index > stackSize - 2)
 			index = 0;
-	}
-
-	IEnumerator fire(){
-		while (true) {
-			FireMissiles();
-			yield return new WaitForSeconds (1);
-		}
 	}
 
 }

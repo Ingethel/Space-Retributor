@@ -1,24 +1,45 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class bossBehaviour : MonoBehaviour {
+public class BossBehaviour : MonoBehaviour {
+	
+	public GameObject[] weapons;
 
-	Vector3 fightLocation = new Vector3(0, 7.5f, 1);
-	public GameObject bossMissile;
+	bool waeponsDead = false;
+	Animator animator;
+	SpawnEnemy enemyManager;
 
 	void Start () {
-		StartCoroutine(moveToFight ());
+		enemyManager = FindObjectOfType<SpawnEnemy> ();
+		enemyManager.bossFight = true;
+		animator = GetComponent<Animator> ();
+		Invoke ("WeaponsReady" , 2.5f);
 	}
 	
-	void Update () {
-	
-	}
-
-	IEnumerator moveToFight(){
-		while (transform.position.y-fightLocation.y > 0.1) {
-			transform.position = new Vector3(transform.position.x, transform.position.y - Time.deltaTime, transform.position.z);
-			yield return null;
+	void FixedUpdate () {
+		waeponsDead = true;
+		foreach (GameObject o in weapons) {
+			if(o.activeInHierarchy){
+				waeponsDead = false;
+				break;
+			}
+		}
+		if (waeponsDead) {
+			StartCoroutine(MoveFromFight());
 		}
 	}
 
+	void WeaponsReady(){
+		foreach (GameObject o in weapons) {
+			o.GetComponent<GunnerState>().WakeUp();
+		}
+	}
+
+
+	IEnumerator MoveFromFight(){
+		animator.SetTrigger ("Death");
+		enemyManager.bossFight = false;
+		yield return new WaitForSeconds (2);
+		Destroy (gameObject);
+	}
 }

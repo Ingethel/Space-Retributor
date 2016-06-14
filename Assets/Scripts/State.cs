@@ -65,4 +65,8 @@ public class State : IPoolObject {
 	public bool isAlive(){
 		return lives;
 	}
+
+	public virtual void WakeUp(){
+		lives = true;
+	}
 }

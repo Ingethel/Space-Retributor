@@ -27,6 +27,8 @@ public class SpawnEnemy : MonoBehaviour {
 
 	PoolManager pool;
 
+	public bool bossFight;
+
 	void Start () {
 		gameState = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameState> ();
 		spawnPoints = GameObject.FindGameObjectsWithTag ("SpawnPoint");
@@ -36,12 +38,14 @@ public class SpawnEnemy : MonoBehaviour {
 		pool.CreatePool (enemyMissile, 20);
 	}
 	
-	void Update () {
+	void FixedUpdate () {
 		// if game playable spawn enemies
 		if (gameState.getState() == 0) {
-			if (Time.time - lastSpawnTime > spawnTime) {
-				lastSpawnTime = Time.time;
-				pool.SpawnObject(enemy, spawnPoints [Random.Range (0, spawnPoints.Length)].GetComponent<Transform> ().position);
+			if (!bossFight){
+				if (Time.time - lastSpawnTime > spawnTime) {
+					lastSpawnTime = Time.time;
+					pool.SpawnObject(enemy, spawnPoints [Random.Range (0, spawnPoints.Length)].GetComponent<Transform> ().position);
+				}
 			}
 		}
 	}
